@@ -17,9 +17,9 @@ int main()
         if(prime[i]==0){
             Prime[++tail] = i;}
         for(int j=0;j<=tail;j++ ){
-                if(i*Prime[j]>maxn) {break;}
-                prime[i*Prime[j]]=1;
-                if((i%Prime[j]) == 0) {break;}
+                if(i*Prime[j]>maxn) {break;}  //越界,break
+                prime[i*Prime[j]]=1;          //筛去这个合数和之前所有素数的乘积
+                if((i%Prime[j]) == 0) {break;} //每个合数只被它的最小质因子筛选一次
         }
     }
     //
